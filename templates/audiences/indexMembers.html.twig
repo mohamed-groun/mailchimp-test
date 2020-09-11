@@ -1,0 +1,27 @@
+<h1>Les membres de l'audience : {{ audience.name }}</h1>
+<a href="{{ url('index_audiences') }}">Revenir à la liste</a>
+<a href="{{ url('new_member', {'idList': audience.id}) }}">Ajouter membre</a>
+<br>
+<br>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Nom</td>
+        <td>Email</td>
+        <td>status</td>
+        <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+        {% for m in members %}
+            <tr>
+                <td>{{ m.merge_fields.FNAME }} {{ m.merge_fields.LNAME }}</td>
+                <td>{{ m.email_address }}</td>
+                <td>{{ m.status }}</td>
+                <td>
+                    <a href="{{ url('delete_member', {'idList': audience.id, 'idMember': m.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

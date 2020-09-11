@@ -1,0 +1,9 @@
+index:
+    path: /
+    controller: '../src/Controller/'
+#api:
+#    path: /
+#    controller:
+#      resource: '../src/Controller/'
+#      type:     annotation
+#

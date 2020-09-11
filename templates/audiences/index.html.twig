@@ -1,0 +1,20 @@
+<h1>Liste des audiences</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Nom</td>
+        <td>Société</td>
+        <td>Actions</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for a in audiences %}
+        <tr>
+            <td>{{ a.name }}</td>
+            <td>{{ a.contact.company }}</td>
+            <td>
+                <a href="{{ url('index_members', {'idList': a.id}) }}">Afficher</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
